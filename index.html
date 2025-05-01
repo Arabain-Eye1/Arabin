@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>By Arabian Eye - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="1.gif" alt="By Arabian Eye Logo" class="logo">
+        <h1>By Arabian Eye - Client Management</h1>
+        <button onclick="window.open('https://web.whatsapp.com')" class="link-button">WhatsApp</button>
+    </header>
+
+    <!-- Search by Client Code -->
+    <section class="search-section">
+        <input type="text" id="searchCode" class="search-input" placeholder="Search by Client Code" onkeypress="searchOnEnter(event)">
+        <button onclick="searchClient()">Search</button>
+    </section>
+
+    <!-- Search by Arrival Date -->
+    <section class="search-section">
+        <input type="date" id="searchDate" class="search-input">
+        <button onclick="searchByDate()">Search by Date</button>
+    </section>
+
+    <!-- Filter clients arriving in 2 days -->
+    <section class="search-section">
+        <button onclick="filterClientsByArrival()">Show Clients Arriving in 2 Days</button>
+    </section>
+
+    <!-- Form Section for adding new clients -->
+    <section class="form-section">
+        <h2>Add New Client</h2>
+        <form id="clientForm">
+            <input type="text" id="clientCode" placeholder="Client Code" required>
+            <input type="text" id="clientName" placeholder="Client Name" required>
+            <input type="text" id="clientPhone" placeholder="Phone Number" required>
+            <input type="text" id="clientCountry" placeholder="Client Country" required>
+            <input type="text" id="clientTo" placeholder="To (Destination)" required>
+            <input type="text" id="driverName" placeholder="Driver Name" required>
+            <input type="date" id="arrivalDate" required>
+            <input type="date" id="departureDate" required>
+            <input type="text" id="clientComment" placeholder="Comment" required>
+            <button type="submit">Add Client</button>
+        </form>
+    </section>
+
+    <!-- Clients Table -->
+    <section class="clients-section">
+        <h2>Client List</h2>
+        <table id="clientsTable">
+            <thead>
+                <tr>
+                    <th>Client Code</th>
+                    <th>Client Name</th>
+                    <th>Phone Number</th>
+                    <th>Country</th>
+                    <th>To</th>
+                    <th>Driver Name</th>
+                    <th>Arrival Date</th>
+                    <th>Departure Date</th>
+                    <th>Comment</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
